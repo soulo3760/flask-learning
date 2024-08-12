@@ -1,0 +1,23 @@
+from flask import Flask
+app = Flask(_name_)
+
+@app.route("/")
+def hello_world():
+  return "<p> Hello, World!</p>"
+
+# we have imported the Flask class 
+next we have created an instance of this class
+we then used the route() decorator ro tell flass what URL should trigger our function. 
+the function returns the message we want to display on users browser. 
+we save this file as hell0.py  
+
+to run 
+ flask --app hello run 
+now head over to http://127.0.0.1:5000
+you should see hello world greeting
+
+if another program is using port 5000 we should get an error, 
+
+to make it accessible to external users
+flask run --host=0.0.0.0
+this tells your operating system to listen to all public IPs. 
