@@ -1,0 +1,23 @@
+HTTP METHODS
+web application use fifferent http methods when accessing URLs
+you should familiarise yourself with the HTTP methods as you work with Flask. 
+By default a route only answers to GET requests,. you can use the methods arguments of the route() decorator to handle diffeerent methods. 
+
+from flask import requests
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else: 
+        return show_the_login_form()
+WE CAN ALSO SEPRATE THE VIEWS FROM DIFFERENT METHODS INTO DIFFERENT FUNCTIONS. 
+flask provides a shortcut for decorating such routes with get() post() etc
+
+@app.get('/login')
+def login_get():
+    return show_the_login_form()
+
+@app.post('/login')
+def login_post():
+  return do_the_login()
+
